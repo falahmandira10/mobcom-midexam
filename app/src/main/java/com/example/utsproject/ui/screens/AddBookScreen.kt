@@ -28,6 +28,9 @@ import com.example.utsproject.data.model.Book
 import com.example.utsproject.data.model.Genre
 import com.example.utsproject.ui.theme.UTSProjectTheme
 import com.example.utsproject.ui.viewmodel.BookViewModel
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.ArrowDropDown
+
 
 
 @Composable
@@ -127,16 +130,25 @@ fun DropdownMenuGenreSelector(
             .border(1.dp,Color(0xffadacb4))
 
     ) {
-        Text(
-            text = selectedGenre.name,
-            modifier = Modifier
-                .fillMaxWidth()
-                .clickable(
-                    interactionSource = interactionSource,
-                    indication = null
-                ) { expanded = true }
-                .padding(16.dp)
-        )
+        Row(
+            modifier = Modifier.fillMaxWidth(),
+            horizontalArrangement = Arrangement.SpaceBetween
+        ) {
+            Text(
+                text = selectedGenre.name,
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .clickable(
+                        interactionSource = interactionSource,
+                        indication = null
+                    ) { expanded = true }
+                    .padding(16.dp)
+            )
+
+            Icon(Icons.Filled.ArrowDropDown, contentDescription = "Arrow Drop Down")
+
+        }
+
 
         DropdownMenu(
             expanded = expanded,
