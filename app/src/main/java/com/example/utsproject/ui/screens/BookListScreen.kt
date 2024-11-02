@@ -18,6 +18,8 @@ val book = Book(
     id = 1,
     title = "The Great Gatsby",
     author = "F. Scott Fitzgerald",
+    publicationYear = null,
+    genre = null,
     summary = "A novel set in the Roaring Twenties, exploring themes of wealth, society, and the American dream."
 )
 

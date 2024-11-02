@@ -13,6 +13,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.utsproject.ui.theme.UTSProjectTheme
 import com.example.utsproject.ui.screen.BookListScreen
+import com.example.utsproject.ui.screen.AddBookScreen
+import com.example.utsproject.ui.viewmodel.BookViewModel
+import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
 
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -20,11 +25,14 @@ class MainActivity : ComponentActivity() {
         enableEdgeToEdge()
         setContent {
             UTSProjectTheme {
-                Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
-                    BookListScreen(
-                        modifier = Modifier.padding(innerPadding)
-                    )
-                }
+                // val bookViewModel: BookViewModel = viewModel()
+              Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                AddBookScreen(
+                    modifier = Modifier.padding(innerPadding)
+                    // viewModel = bookViewModel,
+                    // onBookAdded = { }
+                )
+              }
             }
         }
     }
